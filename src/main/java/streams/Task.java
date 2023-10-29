@@ -3,8 +3,9 @@ package streams;
 import streams.model.Human;
 
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
-import static java.util.stream.Collectors.partitioningBy;
 
 // Code from https://github.com/vfarcic/java-8-exercises
 
@@ -23,7 +24,7 @@ public class Task {
     }
 
     public static List<String> toUpperCase(List<String> collection) {
-        // ToDo
+       // ToDo
         return null;
     }
 
@@ -46,31 +47,31 @@ public class Task {
      * MEDIUM
      */
 
-    public static Map<String, Human> createMapOldJava(List<Human> collection) {
-        Map<String, Human> people = new HashMap<>();
+    public static Map<String,Human> createMapOldJava(List<Human> collection) {
+        Map<String,Human> people = new HashMap<>();
         for (Human element : collection) {
             people.put(element.getName(), element);
         }
         return people;
     }
 
-    public static Map<String, Human> createMap(List<Human> collection) {
+    public static Map<String,Human> createMap(List<Human> collection) {
         // ToDo
         return null;
     }
 
 
-    public static Human getOldestPersonOldJava(List<Human> people) {
+    public static Human getOldestHumanOldJava(List<Human> people) {
         Human oldestHuman = new Human("", 0);
-        for (Human human : people) {
-            if (human.getAge() > oldestHuman.getAge()) {
-                oldestHuman = human;
+        for (Human person : people) {
+            if (person.getAge() > oldestHuman.getAge()) {
+                oldestHuman = person;
             }
         }
         return oldestHuman;
     }
 
-    public static Human getOldestPerson(List<Human> people) {
+    public static Human getOldestHuman(List<Human> people) {
         // ToDo
         return null;
     }
@@ -84,8 +85,8 @@ public class Task {
         Map<Boolean, List<Human>> map = new HashMap<>();
         map.put(true, new ArrayList<>());
         map.put(false, new ArrayList<>());
-        for (Human human : people) {
-            map.get(human.getAge() >= 18).add(human);
+        for (Human person : people) {
+            map.get(person.getAge() >= 18).add(person);
         }
         return map;
     }
