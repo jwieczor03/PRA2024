@@ -2,6 +2,8 @@ package pl.edu.amu.pracprog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 import model.Employee;
 import org.apache.log4j.Logger;
 
@@ -62,6 +64,9 @@ public class JacksonSerialization {
     public static void main(String[] args) throws IOException {
 
         ObjectMapper jsonMapper = new ObjectMapper();
+        //XmlMapper mapper = new XmlMapper();
+        jsonMapper.registerModule(new JodaModule());
+        //serializeDemo(mapper, "xml");
         serializeDemo(jsonMapper, "json");
         deserializeDemo(jsonMapper, "json");
 

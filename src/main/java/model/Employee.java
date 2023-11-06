@@ -1,16 +1,33 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.joda.time.DateTime;
+
 import java.util.ArrayList;
 import java.util.List;
-
+@JsonIdentityInfo(generator= ObjectIdGenerators.IntSequenceGenerator.class,
+        property="refId", scope=Employee.class)
 public class Employee {
 
+    public DateTime getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(DateTime birthDate) {
+        this.birthDate = birthDate;
+    }
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss.SSSZ")
+    DateTime birthDate;
     private int id;
 
     private String firstName;
 
     private String lastName;
 
+    @JsonProperty("wynagrodzenie")
     private int salary;
 
     private int pesel;
