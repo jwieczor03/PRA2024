@@ -58,10 +58,10 @@ public class ProductController {
      * Save product to database.
      */
     @PostMapping(value = "/product")
-    public ResponseEntity<Product> create(@RequestBody Product product) {
+    public ResponseEntity<Object> create(@RequestBody Product product) {
         product.setProductId(UUID.randomUUID().toString());
         productService.saveProduct(product);
-        return ResponseEntity.ok().body(product);
+        return ResponseEntity.ok().build();
     }
 
     @ExceptionHandler
