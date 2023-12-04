@@ -1,0 +1,32 @@
+<Employee>
+  <id>0</id>
+  <firstName>Jan</firstName>
+  <lastName>Polak-1874235918</lastName>
+  <pesel>383242811</pesel>
+  <address>
+    <id>0</id>
+    <street>poznanska</street>
+    <city>Poznan</city>
+    <nr>1</nr>
+    <houseNr/>
+    <postcode>99090</postcode>
+  </address>
+  <subworkers>
+    <subworkers>
+      <id>0</id>
+      <firstName>Roman</firstName>
+      <lastName>Polak-1261896668</lastName>
+      <pesel>2060636643</pesel>
+      <address>
+        <id>0</id>
+        <street>poznanska</street>
+        <city>Poznan</city>
+        <nr>1</nr>
+        <houseNr/>
+        <postcode>99090</postcode>
+      </address>
+      <wynagrodzenie>100</wynagrodzenie>
+    </subworkers>
+  </subworkers>
+  <wynagrodzenie>200</wynagrodzenie>
+</Employee>
